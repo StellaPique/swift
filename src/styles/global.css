@@ -1,13 +1,49 @@
+@font-face {
+    font-family: "Quicksand";
+    src: url("../fonts/Quicksand-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../fonts/Quicksand-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../fonts/Quicksand-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../fonts/Quicksand-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("../fonts/Quicksand-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
 body {
+    font-family: "Quicksand";
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 main {
-    width: 70%;
+    font-family: "Quicksand";
+    width: 60%;
     margin: 0 auto;
     padding: 0 5px;
+    font-size: 20px;
 }
+
 
 .site-header {
     display: grid;
@@ -15,7 +51,7 @@ main {
     align-items: center;
 
     margin-bottom: 20px;
-    padding: 10px 5px;
+    padding: 10px 15px;
     padding-bottom: 20px;
 
     position: sticky;
@@ -27,6 +63,8 @@ main {
 
 .site-header h1 {
     margin: 5px 5px;
+    transform: translateY(4px);
+    font-weight: bold;
 }
 .site-header h1 a:link,
 .site-header h1 a:visited {
@@ -36,9 +74,26 @@ main {
 .site-header h1 a:hover {
     text-decoration: underline;
 }
-.site-header nav {
-    margin-top: 30px;
+.site-header nav{
     display: flex;
     justify-content: center;
     gap: 20px;
+
+    align-self: end;
+    transform: translateY(6px);
+}
+.site-header nav a {
+    padding: 10px 18px;
+    border: 2px solid #1f1f1f;
+    border-radius: 15px;
+}
+.site-header nav a:link,
+.site-header nav a:visited {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: #1f1f1f;
+}
+.site-header nav a:hover {
+    text-decoration: underline;
 }
