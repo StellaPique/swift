@@ -28,12 +28,19 @@
     font-weight: 700;
 }
 
+::selection {
+    background-color: #f8f2fc;
+    color: #1f1f1f;
+}
+
 body {
     font-family: "Quicksand";
     margin: 0;
     padding: 0;
     font-size: 16px;
     line-height: 1.6;
+    background-color: #1F1F1F;
+    color: #FCFAF2;
 }
 
 main {
@@ -57,7 +64,8 @@ main {
     position: sticky;
     top: 0;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #181818;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     z-index: 1000;
 }
 
@@ -65,10 +73,11 @@ main {
     margin: 5px 5px;
     transform: translateY(4px);
     font-weight: bold;
+    color: #FCFAF2;
 }
 .site-header h1 a:link,
 .site-header h1 a:visited {
-    color: black;
+    color: #FCFAF2;
     text-decoration: none;
 }
 .site-header h1 a:hover {
@@ -86,14 +95,54 @@ main {
     padding: 10px 18px;
     border: 2px solid #1f1f1f;
     border-radius: 15px;
+    transition: all 0.15s ease-out;
 }
 .site-header nav a:link,
 .site-header nav a:visited {
-    color: #f5f5f5;
+    background-color: transparent;
+    color: #FCFAF2;
+
+    border: 2px solid #FCFAF2;
     text-decoration: none;
     font-weight: 600;
-    background-color: #1f1f1f;
+    border-radius: 15px;
+    padding: 8px 18px;
 }
+
 .site-header nav a:hover {
+    color: #1f1f1f;
+    background-color: #FCFAF2;
+    color: #1f1f1f;
+    text-decoration: none;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: start;
+}
+.stories-grid .story-card {
+    background-color: #262626;
+    padding: 30px;
+    border-radius: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    color:#FCFAF2;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+.stories-grid .story-card:hover {
+    box-shadow: 9px 9px 0px rgba(0, 0, 0, 0.35);
+    transform: translateY(-5px);
+    background-color: #2d2d2d;
+}
+.stories-grid .story-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.stories-grid .story-card:hover h3 {
     text-decoration: underline;
 }

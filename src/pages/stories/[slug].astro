@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const allStories = await getCollection('stories');
+    
+    return allStories.map((story) => {
+        // Force the parameter to match the exact string ID we saw in your terminal
+        const cleanId = story.id; 
+        
+        return {
+            params: { id: cleanId },
+            props: { story },
+        };
+    });
+}
+
+const { story } = Astro.props;
+console.log("ASTRO IS TRYING TO BUILD:", story.id);
+const { Content } = await render(story);
+---
+
+<Layout>
+    <article class="single-story">
+        {story.data.image && (
+            <img src={story.data.image} alt={story.data.title} class="story-hero-image" />
+        )}
+        
+        <h1>{story.data.title}</h1>
+        
+        <hr />
+        
+        <div class="story-content">
+            <Content />
+        </div>
+    </article>
+</Layout>

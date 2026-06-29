@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {getCollection} from 'astro:content';
+const AllStories = await getCollection('stories');
+
+console.log(AllStories.map(s => s.id));
+---
+
+<Layout pageClass="stories-page">
+    <div class="stories-grid">
+        {AllStories.map((story) => (
+            <a href={`/stories/${story.id}`} class="story-card">
+                {story.data.image && (
+                    <img src={story.data.image} alt={story.data.title} />
+                )}
+                <div class="card-content">
+                    <h3>{story.data.title}</h3>
+                    <p>{story.data.description}</p>
+                </div>
+            </a>
+        ))}
+    </div>
+</Layout>
