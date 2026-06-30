@@ -64,9 +64,19 @@ main {
     position: sticky;
     top: 0;
 
+    animation: hide-header linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 200px;
+
     background-color: #181818;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     z-index: 1000;
+}
+
+@keyframes hide-header {
+    to {
+        top: -120px;
+    }
 }
 
 .site-header h1 {
@@ -145,4 +155,24 @@ main {
 }
 .stories-grid .story-card:hover h3 {
     text-decoration: underline;
+}
+
+.story-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid #4b4b4b;
+}
+.story-page p:nth-of-type(1n)::after {
+  content: "•";
+  display: block;
+  text-align: center;
+  opacity: 0.4;
+  margin: 10px 0;
+}
+.story-title{
+    text-align: center;
 }

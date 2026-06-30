@@ -2,14 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import {getCollection} from 'astro:content';
 const AllStories = await getCollection('stories');
-
-console.log(AllStories.map(s => s.id));
 ---
 
 <Layout pageClass="stories-page">
     <div class="stories-grid">
         {AllStories.map((story) => (
-            <a href={`/stories/${story.id}`} class="story-card">
+            <a href={`/swift/stories/${story.id}`} class="story-card">
                 {story.data.image && (
                     <img src={story.data.image} alt={story.data.title} />
                 )}
